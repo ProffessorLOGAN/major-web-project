@@ -9,14 +9,14 @@ module.exports.profile = function (req, res) {
 //render the sign  up page
 module.exports.signUp = function (req, res) {
   return res.render("user_sign_up", {
-    title: "Coding-Keeda | sign up",
+    title: "Coding-Keeda | Sign Up",
   });
 };
 
 //render the sign in page
 module.exports.signIn = function (req, res) {
   return res.render("user_sign_in", {
-    title: "Coding-Keeda | sign in",
+    title: "Coding-Keeda | Sign In",
   });
 };
 
@@ -36,8 +36,9 @@ module.exports.create = function (req, res) {
       User.create(req.body, function (err, user) {
         if (err) {
           console.log("error in creating user while signing up");
-          return res.redirect("/users/sign-in");
+          return;
         }
+        return res.redirect("/users/sign-in");
       });
     } else {
       return res.redirect("back");
