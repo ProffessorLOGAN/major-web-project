@@ -1,0 +1,29 @@
+.header-navbar {
+  height: 30px;
+  background-color: skyblue;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.head-name {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-weight: 900;
+  font-size: large;
+  color: purple; }
+
+.auth-links {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+  margin-top: 5px; }
+  .auth-links li {
+    list-style-type: none; }
+    .auth-links li a {
+      text-decoration: none;
+      color: green;
+      font-weight: 600;
+      padding: 5px; }
+    .auth-links li a:hover {
+      cursor: pointer; }

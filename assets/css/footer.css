@@ -1,0 +1,30 @@
+.footer-navbar {
+  height: fit-content;
+  background-color: gray;
+  display: flex;
+  font-weight: 600;
+  flex-direction: row;
+  font-size: large;
+}
+.footer-navbar .copyright-name,
+.footer-navbar .nav-links {
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+.footer-navbar .copyright-name {
+  color: whitesmoke;
+  margin-left: 10px;
+  font-weight: 400;
+}
+.footer-navbar .nav-links {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.footer-navbar .nav-links a {
+  text-decoration: none;
+  color: black;
+}
+.footer-navbar .nav-links a:hover {
+  cursor: pointer;
+}

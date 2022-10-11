@@ -1,17 +1,25 @@
-<header>
-    Page Header
+<link rel="stylesheet" href="/css/header.css">
+<header class="header-navbar">
+    <div class="head-name">
+        <p>Coding-Keeda</p>
+    </div>
+    <div class="auth-links">
+        <% if(locals.user) {%>
+            <li>
+                <%= user.name %>
+            </li>
+            <li>
+                <a href="/users/sign-out">Sign Out</a>
+            </li>
+            <% }else {%>
+                <li>
+                    <a href="/users/sign-in">Sign In</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">Sign Up</a>
+                </li>
+                <%}%>
+    </div>
 
-<% if(locals.user) {%>
-<li><%= user.name %></li>
-<li>
-    <a href="/users/sign-out">Sign Out</a>
-</li>
-<% }else {%>
-    <li>
-        <a href="/users/sign-in">Sign In</a>
-    </li>
-    <li>
-        <a href="/users/sign-up">Sign Up</a>
-    </li>
-    <%}%>
+
 </header>
