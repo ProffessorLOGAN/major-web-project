@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
+const { session } = require('passport');
 
 app.use(expressLayouts);
 
@@ -16,6 +17,20 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 
 app.use(express.static("./assets"));
+
+app.use( session({
+    name:'proffessorlogan',
+    //TODO change the secret before deployment  in production mode 
+    secret: 'nickfury',
+    saveUnitialized: false,
+    resave: false,
+    cookie:{
+        maxAge:(1000*60*100)
+    }
+}))
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // use express router
 app.use('/', require('./routes'));
