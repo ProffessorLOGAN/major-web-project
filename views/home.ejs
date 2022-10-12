@@ -7,8 +7,26 @@
 
 <section class="feed-posts">
         <h4>Posts</h4>
-        <form action="/posts/create" id="new-post-form" method="POST">
-                <textarea name="content" placeholder="type here..." cols="30" rows="3"></textarea>
-                <input type="submit" value="Post">
-        </form>
+        <%if(locals.user){%>
+                <form action="/posts/create" id="new-post-form" method="POST">
+                        <textarea name="content" placeholder="type here..." cols="30" rows="3"></textarea>
+                        <input type="submit" value="Post">
+                </form>
+                <%}%>
+                        <div class="post-list-container">
+                                <u>
+                                        <% for(post of posts){ %>
+                                                <li>
+                                                        <p>
+
+                                                                <%= post.content %>
+                                                                        <br>
+                                                                        <small>
+                                                                                <%= post.user.name %>
+                                                                        </small>
+                                                        </p>
+                                                </li>
+                                                <%}%>
+                                </u>
+                        </div>
 </section>
