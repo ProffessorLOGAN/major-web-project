@@ -18,7 +18,11 @@
                                         <% for(post of posts){ %>
                                                 <li>
                                                         <p>
-
+                                                                <%if(locals.user && locals.user.id == post.user.id){%>
+                                                                <small>
+                                                                        <a href="/posts/destroy/<%= post.id%>">X</a>
+                                                                </small>
+                                                                <%}%>
                                                                 <%= post.content %>
                                                                         <br>
                                                                         <small>
@@ -29,7 +33,8 @@
                                                                 <%if(locals.user){%>
                                                                         <form action="/comments/create" method="POST">
                                                                                 <input type="text" name="content"
-                                                                                        placeholder="type here to add comment.." required>
+                                                                                        placeholder="type here to add comment.."
+                                                                                        required>
                                                                                 <input type="hidden" name="post"
                                                                                         value="<%= post._id %>">
                                                                                 <input type="submit"
@@ -37,16 +42,20 @@
                                                                         </form>
                                                                         <%}%>
                                                                                 <div class="post-comment-list">
-                                                                                        <ul id="post-comments-<%= post._id%>">
-                                                                                        <%for(comment of post.comments){%>
-                                                                                        <p>
-                                                                                                <%= comment.content %>
-                                                                                                <br>
-                                                                                                <small>
-                                                                                                        <%= comment.user.name %>
-                                                                                                </small>
-                                                                                        </p>
-                                                                                                <%}%>
+                                                                                        <ul
+                                                                                                id="post-comments-<%= post._id%>">
+                                                                                                <%for(comment of
+                                                                                                        post.comments){%>
+                                                                                                        <p>
+                                                                                                                <%= comment.content
+                                                                                                                        %>
+                                                                                                                        <br>
+                                                                                                                        <small>
+                                                                                                                                <%= comment.user.name
+                                                                                                                                        %>
+                                                                                                                        </small>
+                                                                                                        </p>
+                                                                                                        <%}%>
                                                                                         </ul>
                                                                                 </div>
                                                         </div>
