@@ -15,37 +15,37 @@
 <body>
     <%- include('_header'); %>
 
-       
-                <main id="layout-main">
 
-                    <%- body %>
+        <main id="layout-main">
 
-                </main>
+            <%- body %>
 
-                <%- include('_footer'); %>
-                    <%- script %>
+        </main>
+
+        <%- include('_footer'); %>
+            <%- script %>
 
 
                     <script>
-                         <% if(flash.success && flash.success.length> 0){%>
-            new Noty({
-                theme: 'relax',
-                text: '<%= flash.success %>',
-                type:'success',
-                layout:'topRight',
-                timeout:2500
-            }).show();
-            <%}%>
+                            <% if (flash.success && flash.success.length > 0) {%>
+                            new Noty({
+                                theme: 'relax',
+                                text: '<%= flash.success %>',
+                                type: 'success',
+                                layout: 'topRight',
+                                timeout: 2500
+                            }).show();
+                <%}%>
 
-            <% if(flash.error && flash.error.length> 0){%>
-            new Noty({
-                theme: 'relax',
-                text: '<%= flash.error %>',
-                type:'error',
-                layout:'topRight',
-                timeout:2500
-            }).show();
-            <%}%>
+                <% if (flash.error && flash.error.length > 0) {%>
+                            new Noty({
+                                theme: 'relax',
+                                text: '<%= flash.error %>',
+                                type: 'error',
+                                layout: 'topRight',
+                                timeout: 2500
+                            }).show();
+                <%}%>
                     </script>
 </body>
 
